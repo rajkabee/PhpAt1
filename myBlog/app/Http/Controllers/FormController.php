@@ -15,5 +15,9 @@ class FormController extends Controller
         echo $request->input('productName');
         return view('form');
     }
+    public function fileUpload(Request $req){
+        $result = $req->file('file')->store('public/images');
+        return ['result'=>'uploaded'];
+    }
 
 }

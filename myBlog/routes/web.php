@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WriteSql;
 use App\Http\Controllers\UserModelController;
@@ -49,3 +50,5 @@ Route::get("/deleteProduct/{id}", [Products::class, "deleteProduct"]);
 Route::get("/updateProductForm/{id}", [Products::class, "updateProductForm"]);
 Route::post("/updateProduct", [Products::class, "updateProduct"]);
 Route::get("/averagePrice", [products::class, "averagePrice"]);
+Route::view("/fileUploadForm", "fileUploadForm");
+Route::post("/fileUpload/{name}", [FormController::class, "fileUpload"]);
